@@ -1,14 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // GitHub Pages 배포를 위한 설정
-  output: 'export',
-  trailingSlash: true,
-  distDir: 'docs',
-  assetPrefix: '/hyundai-auth-project',
-  basePath: '/hyundai-auth-project',
+  // Vercel 배포 최적화 설정
   images: {
-    unoptimized: true
+    domains: ['localhost'],
+    unoptimized: false
   },
   
   // 외부 접근 허용 (성능 경고 해결)

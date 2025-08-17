@@ -1,26 +1,7 @@
 {
-  "version": 2,
-  "name": "hyundai-auth-project",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  },
-  "functions": {
-    "src/app/**/*.tsx": {
-      "maxDuration": 10
-    }
-  },
-  "regions": ["icn1"],
-  "framework": "nextjs"
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "regions": ["icn1"]
 }

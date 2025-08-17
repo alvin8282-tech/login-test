@@ -5,11 +5,12 @@
   "scripts": {
     "dev": "next dev --port 7777 --hostname 0.0.0.0",
     "build": "next build",
-    "build:github": "npm run build && cp .nojekyll docs/",
-    "start": "next start --port 7777 --hostname 0.0.0.0",
-    "lint": "next lint",
-    "serve": "npx serve out -l 8080",
-    "deploy:test": "npm run build && npm run serve"
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   },
   "dependencies": {
     "@types/qrcode": "^1.5.5",

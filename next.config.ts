@@ -7,35 +7,9 @@ const nextConfig: NextConfig = {
     unoptimized: false
   },
   
-  // 외부 접근 허용 (성능 경고 해결)
-  allowedDevOrigins: ['*'],
-  
-  // 메모리 최적화를 위해 Turbopack 비활성화
-  // turbopack: {},
-  
-  // 메모리 최적화 설정
+  // 실험적 기능 최소화
   experimental: {
-    optimizePackageImports: ['@/components', '@/utils'],
-    cpus: 1, // CPU 워커 수 제한
-  },
-  
-  // 번들 최적화
-  webpack: (config, { dev }) => {
-    if (dev) {
-      // 개발 모드에서 메모리 절약
-      config.optimization = {
-        ...config.optimization,
-        minimize: false,
-        splitChunks: false,
-      };
-      
-      // 캐시 제한으로 메모리 절약
-      config.cache = {
-        type: 'memory',
-        maxGenerations: 1,
-      };
-    }
-    return config;
+    optimizePackageImports: ['@/components', '@/utils']
   },
   
   // 정적 사이트에서는 headers 설정이 지원되지 않음
